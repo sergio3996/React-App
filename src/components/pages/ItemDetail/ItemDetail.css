@@ -1,0 +1,18 @@
+.itemDetail {
+  width: 100%;
+  display: flex;
+  box-shadow: 5px 5px 8px #888888;
+  justify-content: space-evenly;
+}
+
+.itemDetail img {
+  width: 500px;
+  height: 460px;
+}
+
+.itemDetailText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 400px;
+}

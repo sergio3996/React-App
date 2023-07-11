@@ -1,0 +1,108 @@
+export const products = [
+  {
+    id: 1,
+    title: "MacBook Air 13″ M2 de 10 núcleos",
+    price: 2600,
+    stock: 10,
+    description:
+      "Con los superpoderes del chip M2.CPU de 8 núcleos - GPU de 10 núcleos",
+    category: "macbook-air",
+    img: "https://res.cloudinary.com/dtaq3xptn/image/upload/v1688992461/Apple-store/macbook-air-13_yl79fm.jpg",
+  },
+  {
+    id: 2,
+    title: "MacBook Air 13″ - M1",
+    price: 1800,
+    stock: 8,
+    description: "Un nuevo poder toma vuelo. Chip M1 de Apple",
+    category: "macbook-air",
+    img: "https://res.cloudinary.com/dtaq3xptn/image/upload/v1688992627/Apple-store/MacBookAir_13_M1_eyczkg.png",
+  },
+  {
+    id: 3,
+    title: "MacBook Pro 13″ - M2 de 8 núcleos",
+    price: 2200,
+    stock: 5,
+    description: "Pro adonde vaya. CPU de 8 núcleos - GPU de 10 núcleos",
+    category: "macbook-pro",
+    img: "https://res.cloudinary.com/dtaq3xptn/image/upload/v1688992759/Apple-store/mcbook-pro-13_harrvk.jpg",
+  },
+  {
+    id: 4,
+    title: "MacBook Pro 14″ - M2 Pro de 10 núcleos",
+    price: 5500,
+    stock: 3,
+    description:
+      "Con los superpoderes del chip M2 Pro. CPU de 10 núcleos - GPU de 16 núcleos",
+    category: "macbook-pro",
+    img: "https://res.cloudinary.com/dtaq3xptn/image/upload/v1688992839/Apple-store/macbook_pro_m2_14_ji2wfo.jpg",
+  },
+  {
+    id: 5,
+    title: "iPad 10.2″ WIFI - 9na Generación",
+    price: 800,
+    stock: 10,
+    description:
+      "Potente, fácil de usar y versátil. El nuevo iPad está diseñado para que hagas todo lo que te gusta.",
+    category: "ipad",
+    img: "https://res.cloudinary.com/dtaq3xptn/image/upload/v1688993022/Apple-store/iPad_10_2_v2ldyt.jpg",
+  },
+  {
+    id: 6,
+    title: "iPad 10.2″ WIFI+4G - 9na Generación",
+    price: 1000,
+    stock: 15,
+    description:
+      "Potente, fácil de usar y versátil. El nuevo iPad está diseñado para que hagas todo lo que te gusta.",
+    category: "ipad",
+    img: "https://res.cloudinary.com/dtaq3xptn/image/upload/v1688993022/Apple-store/iPad_10_2_v2ldyt.jpg",
+  },
+  {
+    id: 7,
+    title: "iPad Air 10.9″ Wi-Fi (5ta Generación)",
+    price: 1300,
+    stock: 6,
+    description:
+      "El iPad es versátil y está listo para todo. Es una forma divertida y poderosa de trabajar, estudiar, jugar y hacer lo que te imagines.",
+    category: "ipad-air",
+    img: "https://res.cloudinary.com/dtaq3xptn/image/upload/v1688993178/Apple-store/iPad_Air_Wi-Fi_gcclk1.jpg",
+  },
+  {
+    id: 8,
+    title: "iPhone 14",
+    price: 2600,
+    stock: 10,
+    description: "Repleto de funcionalidades geniales.",
+    category: "iphone14",
+    img: "https://res.cloudinary.com/dtaq3xptn/image/upload/v1688993295/Apple-store/iPhone_14_rwpxiy.jpg",
+  },
+  {
+    id: 9,
+    title: "iPhone 14 Pro",
+    price: 3500,
+    stock: 5,
+    description: "iPhone 14 Pro. Se pasa de Pro.",
+    category: "iphone14",
+    img: "https://res.cloudinary.com/dtaq3xptn/image/upload/v1688993369/Apple-store/iPhone_14_Pro_aigmq0.jpg",
+  },
+  {
+    id: 10,
+    title: "iPhone 13",
+    price: 1800,
+    stock: 10,
+    description:
+      "Nuestro sistema de dos cámaras más avanzado y un chip superrápido que deja atrás a la competencia",
+    category: "iphone13",
+    img: "https://res.cloudinary.com/dtaq3xptn/image/upload/v1688993460/Apple-store/iPhone_13_vrfo4r.png",
+  },
+  {
+    id: 11,
+    title: "iPhone 13 Pro",
+    price: 2200,
+    stock: 8,
+    description:
+      "Un sistema de cámaras mucho más poderoso. Una pantalla con respuesta inmediata en cada interacción. El chip de smartphone más rápido del mundo. Un diseño increíblemente resistente. Y un gran salto en duración de batería.",
+    category: "iphone13",
+    img: "https://res.cloudinary.com/dtaq3xptn/image/upload/v1688993515/Apple-store/iPhone_13_Pro_kpuxhv.png",
+  },
+];

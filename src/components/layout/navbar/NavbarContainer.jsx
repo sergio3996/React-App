@@ -1,7 +1,13 @@
+import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 
-const NavbarContainer = ({ cartCount }) => {
-  return <Navbar cartCount={cartCount} />;
+const NavbarContainer = () => {
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+    </>
+  );
 };
 
 export default NavbarContainer;

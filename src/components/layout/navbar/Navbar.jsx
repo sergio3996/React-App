@@ -4,47 +4,63 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { Badge, Menu, MenuItem } from "@mui/material";
+import { Badge } from "@mui/material";
 import CartWidget from "../../common/cartWidget/cartWidget";
-import React from "react";
+import DropdownMenu from "../../common/DropdownMenu/DropdownMenu";
+import { Link } from "react-router-dom";
 
-const Navbar = ({ cartCount }) => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+const Navbar = () => {
+  const menu1Items = [
+    { itemName: "MacBook Air", categoryName: "macbook-air" },
+    { itemName: "MacBook Pro", categoryName: "macbook-pro" },
+  ];
+  const menu2Items = [
+    { itemName: "iPad", categoryName: "ipad" },
+    { itemName: "iPad Air", categoryName: "ipad-air" },
+  ];
+  const menu3Items = [
+    { itemName: "iPhone 14", categoryName: "iphone14" },
+    { itemName: "iPhone 13", categoryName: "iphone13" },
+  ];
 
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ backgroundColor: "orange" }}>
+      <AppBar component="nav" sx={{ backgroundColor: "black" }}>
         <Toolbar>
           <Typography
-            variant="h6"
+            variant="h4"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", sm: "block" },
+            }}
           >
-            TECH STORE
+            <Link
+              to={"/"}
+              style={{
+                color: "white",
+                textDecoration: "none",
+                textAlign: "center",
+              }}
+            >
+              Apple Store
+              <img
+                src="https://res.cloudinary.com/dtaq3xptn/image/upload/v1689036489/Apple-store/apple_geq628.png"
+                alt=""
+                style={{ width: 25, marginLeft: 5 }}
+              />
+            </Link>
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            <Button sx={{ color: "#fff" }}>Inicio</Button>
-            <Button
-              sx={{ color: "#fff" }}
-              id="basic-button"
-              aria-controls={open ? "basic-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
-              onClick={handleClick}
-            >
-              Categorias
-            </Button>
+            <DropdownMenu buttonText="Mac" menuItems={menu1Items} />
+            <DropdownMenu buttonText="Ipad" menuItems={menu2Items} />
+            <DropdownMenu buttonText="Iphone" menuItems={menu3Items} />
             <Button sx={{ color: "#fff" }}>
-              <Badge badgeContent={cartCount} color="secondary">
-                <CartWidget />
+              <Badge badgeContent="5" color="secondary">
+                <Link to="/cart" style={{ color: "white" }}>
+                  <CartWidget />
+                </Link>
               </Badge>
             </Button>
           </Box>
@@ -53,34 +69,6 @@ const Navbar = ({ cartCount }) => {
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
       </Box>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "basic-button",
-        }}
-      >
-        <MenuItem onClick={handleClose}>
-          <Button sx={{ color: "black" }}>Monitores</Button>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Button sx={{ color: "black" }}>Graficas</Button>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Button sx={{ color: "black" }}>Procesadores</Button>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Button sx={{ color: "black" }}>Memorias</Button>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Button sx={{ color: "black" }}>Discos</Button>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Button sx={{ color: "black" }}>Refrigeracion</Button>
-        </MenuItem>
-      </Menu>
     </Box>
   );
 };
