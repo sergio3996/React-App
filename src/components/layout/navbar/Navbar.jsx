@@ -10,7 +10,7 @@ import { useContext } from "react";
 import { UserContext } from "../../../context/UserContext";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useState } from "react";
-import CartWidget from "../../common/cartWidget/cartWidget";
+import CartWidget from "../../common/CartWidget/CartWidget";
 
 const Navbar = () => {
   const menu1Items = [
