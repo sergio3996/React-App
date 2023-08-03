@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import CartWidget from "../../common/cartWidget/cartWidget";
 import DropdownMenu from "../../common/DropdownMenu/DropdownMenu";
 import { Link } from "react-router-dom";
 import { Button, Menu, MenuItem } from "@mui/material";
@@ -11,6 +10,7 @@ import { useContext } from "react";
 import { UserContext } from "../../../context/UserContext";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useState } from "react";
+import CartWidget from "../../common/cartWidget/cartWidget";
 
 const Navbar = () => {
   const menu1Items = [
