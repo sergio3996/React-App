@@ -12,11 +12,11 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
   return (
-    <Grid item xs={3}>
+    <Grid item lg={3} md={4} flexWrap={"wrap"}>
       <Card
         sx={{
           maxWidth: 345,
-          width: 400,
+          width: 300,
           minHeight: 520,
           margin: 5,
           justifyContent: "space-evenly",
@@ -37,18 +37,18 @@ const ProductCard = ({ item }) => {
               {item.description}
             </Typography>
           </CardContent>
-          <CardActions>
-            <Link to={`/itemDetail/${item.id}`} style={{ color: "white" }}>
-              <Button
-                size="large"
-                variant="contained"
-                sx={{ backgroundColor: "black", color: "white" }}
-              >
-                Conocé más
-              </Button>
-            </Link>
-          </CardActions>
         </CardActionArea>
+        <CardActions>
+          <Link to={`/itemDetail/${item.id}`} style={{ color: "white" }}>
+            <Button
+              size="large"
+              variant="contained"
+              sx={{ backgroundColor: "black", color: "white" }}
+            >
+              Conocé más
+            </Button>
+          </Link>
+        </CardActions>
       </Card>
     </Grid>
   );

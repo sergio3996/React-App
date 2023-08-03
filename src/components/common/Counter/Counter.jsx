@@ -1,19 +1,14 @@
 import { Box, Button, Typography } from "@mui/material";
-import { useState } from "react";
 
-const Counter = ({ stock }) => {
-  const [quantity, setQuantity] = useState(1);
-
-  const increaseQuantity = () => {
-    quantity < stock && setQuantity(quantity + 1);
-  };
-
-  const decreaseQuantity = () => {
-    quantity > 1 && setQuantity(quantity - 1);
-  };
-
+const Counter = ({
+  quantity,
+  stock,
+  addToCart,
+  decreaseQuantity,
+  increaseQuantity,
+}) => {
   return (
-    <Box display="flex" alignItems="center" marginTop={2}>
+    <Box display="flex" alignItems="center" marginTop={2} flexWrap="wrap">
       <Typography variant="body1" component="div" marginRight={2}>
         Cantidad:
       </Typography>
@@ -21,6 +16,7 @@ const Counter = ({ stock }) => {
         variant="contained"
         sx={{ backgroundColor: "black", color: "white" }}
         onClick={decreaseQuantity}
+        disabled={quantity <= 1}
       >
         -
       </Button>
@@ -36,8 +32,21 @@ const Counter = ({ stock }) => {
         variant="contained"
         sx={{ backgroundColor: "black", color: "white" }}
         onClick={increaseQuantity}
+        disabled={quantity >= stock}
       >
         +
+      </Button>
+      <Button
+        variant="contained"
+        sx={{
+          backgroundColor: "black",
+          color: "white",
+          width: "100%",
+          marginTop: 5,
+        }}
+        onClick={() => addToCart(quantity)}
+      >
+        Agregar al carrito
       </Button>
     </Box>
   );

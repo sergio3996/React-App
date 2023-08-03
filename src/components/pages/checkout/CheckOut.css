@@ -1,0 +1,31 @@
+.checkout {
+  display: flex;
+  width: 1000px;
+  box-shadow: 5px 5px 15px grey;
+  border-radius: 10px;
+  justify-content: space-between;
+}
+
+.checkout img {
+  height: 700px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.checkoutForm {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.checkoutForm form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  margin: 10px;
+}

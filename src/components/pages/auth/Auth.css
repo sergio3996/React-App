@@ -1,0 +1,14 @@
+.signForm {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  justify-content: space-evenly;
+  height: 500px;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px grey;
+}
+
+.signTextfield {
+  width: 350px;
+}

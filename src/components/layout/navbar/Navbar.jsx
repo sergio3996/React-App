@@ -3,11 +3,14 @@ import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import { Badge } from "@mui/material";
 import CartWidget from "../../common/cartWidget/cartWidget";
 import DropdownMenu from "../../common/DropdownMenu/DropdownMenu";
 import { Link } from "react-router-dom";
+import { Button, Menu, MenuItem } from "@mui/material";
+import { useContext } from "react";
+import { UserContext } from "../../../context/UserContext";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { useState } from "react";
 
 const Navbar = () => {
   const menu1Items = [
@@ -22,6 +25,18 @@ const Navbar = () => {
     { itemName: "iPhone 14", categoryName: "iphone14" },
     { itemName: "iPhone 13", categoryName: "iphone13" },
   ];
+
+  const { authUser, userSignOut } = useContext(UserContext);
+
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleMouse = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -56,17 +71,39 @@ const Navbar = () => {
             <DropdownMenu buttonText="Mac" menuItems={menu1Items} />
             <DropdownMenu buttonText="Ipad" menuItems={menu2Items} />
             <DropdownMenu buttonText="Iphone" menuItems={menu3Items} />
-            <Button sx={{ color: "#fff" }}>
-              <Badge badgeContent="5" color="secondary">
-                <Link to="/cart" style={{ color: "white" }}>
-                  <CartWidget />
-                </Link>
-              </Badge>
-            </Button>
+            <Link to="/cart" style={{ color: "white" }}>
+              <CartWidget />
+            </Link>
+            {authUser ? (
+              <>
+                <Button sx={{ color: "#fff" }} onClick={handleMouse}>
+                  {authUser.email} <ArrowDropDownIcon />
+                </Button>
+                <Menu
+                  anchorEl={anchorEl}
+                  open={Boolean(anchorEl)}
+                  onClose={handleClose}
+                >
+                  <Button
+                    onClick={userSignOut}
+                    variant="text"
+                    sx={{ backgroundColor: "white", color: "black" }}
+                  >
+                    <MenuItem onClick={handleClose}>Salir</MenuItem>
+                  </Button>
+                </Menu>
+              </>
+            ) : (
+              <Link to="/signin">
+                <Button variant="outlined" sx={{ color: "#fff" }}>
+                  Ingresar
+                </Button>
+              </Link>
+            )}
           </Box>
         </Toolbar>
       </AppBar>
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main" sx={{ p: 1 }}>
         <Toolbar />
       </Box>
     </Box>
