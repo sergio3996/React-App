@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import "./itemDetail.css";
+import "./ItemDetail.css";
 import CounterContainer from "../../common/Counter/CounterContainer";
 
 const ItemDetail = ({ product, addToCart, amountInCart }) => {
