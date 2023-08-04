@@ -44,25 +44,12 @@ const CheckOut = () => {
     onSubmit: (data) => {
       let ordersCollections = collection(db, "orders");
       addDoc(ordersCollections, data).then((res) => setOrderId(res.id));
+      console.log(orderId);
       cart.forEach((element) => {
         updateDoc(doc(db, "products", element.id), {
           stock: element.stock - element.quantity,
         });
       });
-      if (orderId) {
-        Swal.fire({
-          title: "Aqui esta tu numero de compra",
-          text: orderId,
-          imageUrl:
-            "https://res.cloudinary.com/dtaq3xptn/image/upload/v1691067592/ty_nhn13a.avif",
-          imageWidth: 400,
-          imageHeight: 200,
-          imageAlt: "Custom image",
-          confirmButtonColor: "black",
-        }).then(() => {
-          navigate("/");
-        });
-      }
       clearCart();
     },
     validationSchema: Yup.object({
@@ -85,6 +72,23 @@ const CheckOut = () => {
     }),
     validateOnChange: false,
   });
+
+  useEffect(() => {
+    if (orderId != "") {
+      Swal.fire({
+        title: "Aqui esta tu orden de compra",
+        text: orderId,
+        imageUrl:
+          "https://res.cloudinary.com/dtaq3xptn/image/upload/v1691067592/ty_nhn13a.avif",
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: "Custom image",
+        confirmButtonColor: "black",
+      }).then(() => {
+        navigate("/");
+      });
+    }
+  }, [orderId]);
 
   useEffect(() => {
     axios
